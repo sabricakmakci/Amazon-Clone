@@ -10,6 +10,7 @@ const app = express();
 const DB = "mongodb+srv://sabricakmakci:M.1975.1975m@cluster0.6vntrgz.mongodb.net/?retryWrites=true&w=majority"
 
 // midleware
+app.use(express.json());
 app.use(authRouter);
 
 // Connections
@@ -23,6 +24,6 @@ mongoose
 });
 
 
-app.listen(PORT,  () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`connected at port ${PORT} `); 
 });

@@ -9,7 +9,6 @@ class Product {
   final double price;
   final List<String> images;
   final String? id;
-  final String? userId;
   const Product({
     required this.name,
     required this.description,
@@ -18,7 +17,6 @@ class Product {
     required this.price,
     required this.images,
     this.id,
-    this.userId,
   });
 
   Map<String, dynamic> toMap() {
@@ -30,22 +28,18 @@ class Product {
       'price': price,
       'images': images,
       'id': id,
-      'userId': userId,
     };
   }
 
   factory Product.fromMap(Map<String, dynamic> map) {
     return Product(
-      name: (map["name"] ?? '') as String,
-      description: (map["description"] ?? '') as String,
-      quantity: (map["quantity"] ?? 0.0) as double,
-      category: (map["category"] ?? '') as String,
-      price: (map["price"] ?? 0.0) as double,
-      images: List<String>.from(
-        ((map['images'] ?? const <String>[]) as List<String>),
-      ),
-      id: map['id'] != null ? map["id"] ?? '' : null,
-      userId: map['userId'] != null ? map["userId"] ?? '' : null,
+      name: map["name"] ?? '',
+      description: map["description"] ?? '',
+      quantity: map["quantity"]?.toDouble() ?? 0.0,
+      category: map["category"] ?? '',
+      price: map["price"]?.toDouble() ?? 0.0,
+      images: List<String>.from(map['images']),
+      id: map['_id'],
     );
   }
 

@@ -1,6 +1,6 @@
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/features/home/screens/home_screen.dart';
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 
 import '../../features/account/screens/account_screen.dart';
@@ -92,11 +92,9 @@ class _BottomBarState extends State<BottomBar> {
                   ),
                 ),
               ),
-              child: Badge(
-                elevation: 0,
-                badgeContent: const Text('2'),
-                badgeColor: Colors.white,
-                child: const Icon(
+              child: const badges.Badge(
+                badgeContent: Text('2'),
+                child: Icon(
                   Icons.shopping_cart_outlined,
                 ),
               ),

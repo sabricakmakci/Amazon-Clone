@@ -35,11 +35,11 @@ class Product {
     return Product(
       name: map["name"] ?? '',
       description: map["description"] ?? '',
-      quantity: map["quantity"]?.toDouble() ?? 0.0,
+      quantity: map["quantity"] == null ? 0.0 : double.tryParse(map["quantity"].toString()) ?? 0.0,
       category: map["category"] ?? '',
-      price: map["price"]?.toDouble() ?? 0.0,
-      images: List<String>.from(map['images']),
-      id: map['_id'],
+      price: map["price"] == null ? 0.0 : double.tryParse(map["price"].toString()) ?? 0.0,
+      images: List<String>.from(map["images"] ?? []),
+      id: map["_id"],
     );
   }
 

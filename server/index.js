@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const authRouter = require('./routes/auth');
 const e = require("express");
 const adminRouter = require("./routes/admin");
+const productRouter = require("./routes/product");
 
 // INIT
 const PORT = 3000;
@@ -14,6 +15,7 @@ const DB = "mongodb+srv://sabricakmakci:M.1975.1975m@cluster0.6vntrgz.mongodb.ne
 app.use(express.json());
 app.use(authRouter);
 app.use(adminRouter);
+app.use(productRouter);
 
 // Connections
 mongoose

@@ -25,7 +25,6 @@ adminRouter.post('/admin/add-product', admin, async (req, res) => {
 });
 
 // Get all your products
-// /admin/get-products
 
 adminRouter.get('/admin/get-products', admin, async (req, res) => {
    try {

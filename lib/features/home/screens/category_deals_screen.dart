@@ -1,5 +1,5 @@
 import 'package:amazon_clone/common/widgets/loader.dart';
-import 'package:amazon_clone/constants/global_variables.dart';
+import 'package:amazon_clone/utils/constants/global_variables.dart';
 import 'package:amazon_clone/features/home/services/home_services.dart';
 import 'package:amazon_clone/models/product.dart';
 import 'package:flutter/material.dart';

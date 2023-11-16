@@ -2,9 +2,9 @@
 
 import 'dart:convert';
 
-import 'package:amazon_clone/constants/error_handling.dart';
-import 'package:amazon_clone/constants/global_variables.dart';
-import 'package:amazon_clone/constants/utils.dart';
+import 'package:amazon_clone/utils/constants/error_handling.dart';
+import 'package:amazon_clone/utils/constants/global_variables.dart';
+import 'package:amazon_clone/utils/constants/utils.dart';
 import 'package:amazon_clone/models/user.dart';
 import 'package:amazon_clone/providers/user_provider.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +15,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../common/widgets/bottom_bar.dart';
 
 class AuthService {
+  FocusNode? nameFocus;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+
+  void checkName() {
+    if (!nameFocus!.hasFocus && nameController.text.length > 1) {
+      nameController.text = nameController.text.trim();
+    }
+  }
+
   void signUpUser({
     required BuildContext context,
     required String email,

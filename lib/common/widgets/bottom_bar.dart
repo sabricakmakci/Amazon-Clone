@@ -1,4 +1,4 @@
-import 'package:amazon_clone/constants/global_variables.dart';
+import 'package:amazon_clone/utils/constants/global_variables.dart';
 import 'package:amazon_clone/features/home/screens/home_screen.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';

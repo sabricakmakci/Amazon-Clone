@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:amazon_clone/common/widgets/custom_button.dart';
 import 'package:amazon_clone/common/widgets/custom_textfield.dart';
-import 'package:amazon_clone/constants/global_variables.dart';
-import 'package:amazon_clone/constants/utils.dart';
+import 'package:amazon_clone/utils/constants/global_variables.dart';
+import 'package:amazon_clone/utils/constants/utils.dart';
 import 'package:amazon_clone/features/admin/services/admin_services.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
@@ -144,22 +144,26 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   CustomTextField(
                     controller: productNameController,
                     hintText: 'Product Name',
+                    keyboardType: TextInputType.name,
                   ),
                   const SizedBox(height: 10),
                   CustomTextField(
                     controller: descriptionController,
                     hintText: 'Description',
+                    keyboardType: TextInputType.name,
                     maxLines: 7,
                   ),
                   const SizedBox(height: 10),
                   CustomTextField(
                     controller: priceController,
                     hintText: 'Price',
+                    keyboardType: TextInputType.number,
                   ),
                   const SizedBox(height: 10),
                   CustomTextField(
                     controller: quantityController,
                     hintText: 'Quantity',
+                    keyboardType: TextInputType.number,
                   ),
                   const SizedBox(height: 10),
                   SizedBox(
